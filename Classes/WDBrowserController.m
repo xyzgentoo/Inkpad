@@ -148,6 +148,7 @@ NSString *WDAttachmentNotification = @"WDAttachmentNotification";
 
 - (void) startEditingDrawing:(WDDocument *)document
 {
+    // 避免Gallery处于编辑状态,可以选择多个图片的那种
     [self setEditing:NO animated:NO];
     
     WDCanvasController *canvasController = [[WDCanvasController alloc] init];
@@ -168,6 +169,7 @@ NSString *WDAttachmentNotification = @"WDAttachmentNotification";
 
 - (void) addDrawing:(id)sender
 {
+    // Gallery界面右上角的+号按钮,如果已展开,则收起
     if (popoverController_) {
         [self dismissPopover];
     } else {
@@ -175,6 +177,7 @@ NSString *WDAttachmentNotification = @"WDAttachmentNotification";
         UINavigationController  *navController = [[UINavigationController alloc] initWithRootViewController:pageSizeController_];
         
         pageSizeController_.target = self;
+        // 这里的action对应的Create按钮
         pageSizeController_.action = @selector(createNewDrawing:);
         
         popoverController_ = [[UIPopoverController alloc] initWithContentViewController:navController];

@@ -1,7 +1,17 @@
+# Ignore files built by AppCode
+.idea/
+
+# Ignore files built by Xcode
+xcuserdata/
 .DS_Store
-*~
-*.mode1v3
-*.pbxuser
-*.perspectivev3
-xcuserdata
-project.xcworkspace
+
+# Hudson
+_DailyBuilds/
+Packaging/buildNumber
+buildNumber
+MasterCameraPackages
+sourceid.dat
+crashlytics_failed
+
+# Derived Data
+DerivedData/*

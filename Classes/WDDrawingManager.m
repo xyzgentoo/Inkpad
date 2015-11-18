@@ -523,6 +523,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 
 - (void) saveDrawingOrder_
 {
+    // 之前没这么用过...
     [[NSPropertyListSerialization dataWithPropertyList:drawingNames_ format:NSPropertyListXMLFormat_v1_0 options:0 error:NULL]
      writeToFile:[WDDrawingManager drawingOrderPath] atomically:YES];
 }
